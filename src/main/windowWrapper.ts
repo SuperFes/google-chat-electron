@@ -15,11 +15,12 @@ export default (url: string): BrowserWindow => {
     },
     icon: nativeImage.createFromPath(path.join(app.getAppPath(), 'resources/icons/normal/256.png')),
     show: false,
-    minHeight: 570,
-    minWidth: 480,
+    minHeight: 400,
+    minWidth: 600,
     center: true,
     title: 'Google Chat',
     backgroundColor: '#E8EAED',
+    autoHideMenuBar: true,
   });
 
   window.once('ready-to-show', () => {
