@@ -37,8 +37,8 @@ const schema: Store.Schema<StoreType> = {
         default: {
           x: null,
           y: null,
-          width: 800,
-          height: 600,
+          width: 740,
+          height: 540,
         }
       },
       isMaximized: {
