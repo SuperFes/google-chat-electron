@@ -1,12 +1,12 @@
 {
   "name": "google-chat-electron",
-  "version": "2.13.0",
+  "version": "2.13.2",
   "description": "Unofficial desktop app for Google Chat.",
   "private": true,
   "repository": "https://github.com/ankurk91/google-chat-electron",
   "homepage": "https://github.com/ankurk91/google-chat-electron",
   "author": "ankurk91",
-  "license": "MIT",
+  "license": "GNU GPLv3",
   "main": "lib/main/index.js",
   "scripts": {
     "prestart": "npm run ts",
@@ -34,7 +34,7 @@
   "devDependencies": {
     "@types/auto-launch": "^5.0.2",
     "@types/throttle-debounce": "^2.1.0",
-    "electron": "^16.0.5",
+    "electron": "^16.0.7",
     "electron-packager": "^15.4.0",
     "rimraf": "^3.0.2",
     "typescript": "^4.5.4"
