@@ -1,6 +1,6 @@
 {
   "name": "google-chat-electron",
-  "version": "2.14.2",
+  "version": "2.15.0",
   "description": "Unofficial desktop app for Google Chat.",
   "private": true,
   "repository": "https://github.com/ankurk91/google-chat-electron",
@@ -20,7 +20,9 @@
     "build:windows": "node ./windows/installer.js",
     "prepack:mac": "npm run clean:dist && npm run ts",
     "pack:mac": "electron-packager . --platform=darwin --arch=x64 --asar --overwrite --out=./dist/ --icon=./resources/icons/normal/mac.icns",
+    "pack:mac-arm": "electron-packager . --platform=darwin --arch=arm64 --asar --overwrite --out=./dist/ --icon=./resources/icons/normal/mac.icns",
     "build:mac-zip": "bash ./mac/installer-zip.sh",
+    "build:mac-arm-zip": "bash ./mac/installer-arm-zip.sh",
     "prepack:linux": "npm run clean:dist && npm run ts",
     "pack:linux": "electron-packager . --platform=linux --arch=x64 --asar --overwrite --out=./dist/",
     "build:deb": "electron-installer-debian --config=./debian/config.json --arch=amd64",
@@ -34,18 +36,18 @@
   "devDependencies": {
     "@types/auto-launch": "^5.0.2",
     "@types/throttle-debounce": "^2.1.0",
-    "electron": "^17.0.0",
+    "electron": "^18.0.3",
     "electron-packager": "^15.4.0",
     "rimraf": "^3.0.2",
-    "typescript": "^4.5.5"
+    "typescript": "^4.6.3"
   },
   "dependencies": {
     "auto-launch": "^5.0.5",
-    "electron-context-menu": "^3.1.1",
+    "electron-context-menu": "^3.1.2",
     "electron-is-snap": "^1.0.2",
-    "electron-log": "^4.4.5",
+    "electron-log": "^4.4.6",
     "electron-store": "^8.0.1",
-    "electron-unhandled": "^4.0.0",
+    "electron-unhandled": "^4.0.1",
     "electron-update-notifier": "^1.5.3",
     "electron-util": "^0.17.2",
     "is-online": "^9.0.1",

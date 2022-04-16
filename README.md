@@ -59,7 +59,7 @@ sudo apt-get remove --purge google-chat-electron
 
 ### Installation (Mac)
 
-* Homebrew users can run `brew install --cask google-chat-electron`
+* Homebrew users can run `brew install --cask --no-quarantine google-chat-electron`
 
 or
 
@@ -79,14 +79,21 @@ sudo xattr -rd com.apple.quarantine ~/Applications/google-chat-electron.app
 * Logout and Quit from app
 * Move the app to trash
 
-### Installation Windows 
+### Installation Windows
 
-* :warning: This app is **NOT** available on [Windows App Store](https://www.microsoft.com/en-in/p/desktop-client-for-google-chat/9mzxbpl66066)
-* The only way to install this app to [download](https://github.com/ankurk91/google-chat-electron/releases/latest) the installer
+* :warning: This app is **NOT** available
+  on [Windows App Store](https://www.microsoft.com/en-in/p/desktop-client-for-google-chat/9mzxbpl66066)
+* You can install this app by [downloading](https://github.com/ankurk91/google-chat-electron/releases/latest) the
+  installer
+* If you prefer [winget-cli](https://github.com/microsoft/winget-cli) on Windows 10+, you can run:
+
+```bash
+winget install --id=ankurk91.GoogleChatElectron  -e
+```
 
 ### Supported Platforms
 
-The app should work on all x64 platforms, but due to lack of time; we test on most popular only.
+The app should work on all x64 and Apple ARM platforms, but due to lack of time; we test on most popular only.
 
 | OS/Platform         |  Version  |
 |:--------------------|:---------:|
@@ -116,7 +123,7 @@ The app should work on all x64 platforms, but due to lack of time; we test on mo
 
 * [@robyf](https://github.com/robyf/google-chat-linux) for the initial work
 * [@squalou](https://github.com/squalou/google-chat-linux) for enhancements
-* All other [contributors](https://github.com/ankurk91/google-chat-electron/graphs/contributors)
+* All past [contributors](https://github.com/ankurk91/google-chat-electron/graphs/contributors)
 
 ## Disclaimer
 
