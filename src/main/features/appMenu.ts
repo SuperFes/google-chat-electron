@@ -148,7 +148,7 @@ export default (window: BrowserWindow) => {
         {
           label: 'Auto check for Updates',
           type: 'checkbox',
-          enabled: !environment.isSnap,
+          enabled: true,
           checked: store.get('app.autoCheckForUpdates'),
           click: (menuItem) => {
             store.set('app.autoCheckForUpdates', menuItem.checked)
@@ -177,6 +177,16 @@ export default (window: BrowserWindow) => {
             store.set('app.startHidden', menuItem.checked)
           }
         },
+        {
+          label: 'Hide Menu Bar',
+          type: 'checkbox',
+          checked: store.get('app.hideMenuBar'),
+          click: async (menuItem) => {
+            window.setMenuBarVisibility(!menuItem.checked)
+            window.setAutoHideMenuBar(menuItem.checked)
+            store.set('app.hideMenuBar', menuItem.checked)
+          }
+        },
       ]
     },
     {
@@ -192,7 +202,7 @@ export default (window: BrowserWindow) => {
         },
         {
           label: 'Check For Updates',
-          enabled: !environment.isSnap,
+          enabled: true,
           click: () => {
             checkForUpdates({
               silent: false,

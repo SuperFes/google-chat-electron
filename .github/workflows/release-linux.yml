@@ -9,7 +9,7 @@ jobs:
   release-linux:
     name: release-linux
     runs-on: ubuntu-20.04
-    timeout-minutes: 30
+    timeout-minutes: 15
 
     steps:
       - name: Checkout code
@@ -20,10 +20,8 @@ jobs:
         with:
           node-version: 16.x
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2.2.1
-        with:
-          version: 6.x.x
+      - name: Install pnpm
+        run: npm install -g pnpm@^7
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -46,21 +44,3 @@ jobs:
           tag: ${{ github.ref }}
           file_glob: true
 
-      - name: Prepare for building snap package
-        run: npm run build:snap-template
-
-      - name: Create Snap package
-        uses: snapcore/action-build@v1
-        id: snapcraft
-
-      - name: Prepare for publishing on snap store
-        run: |
-          sudo snap install review-tools
-          npm run build:snap-repack
-
-      - name: Publish to snap store
-        uses: snapcore/action-publish@v1
-        with:
-          store_login: ${{ secrets.SNAPCRAFT_TOKEN }}
-          snap: ${{ steps.snapcraft.outputs.snap }}
-          release: stable
