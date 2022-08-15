@@ -3,6 +3,7 @@
 [![latest-tag](https://badgen.net/github/release/ankurk91/google-chat-electron)](https://github.com/ankurk91/google-chat-electron/releases)
 [![downloads](https://img.shields.io/github/downloads/ankurk91/google-chat-electron/total?cacheSeconds=3600)](https://somsubhra.github.io/github-release-stats/?username=ankurk91&repository=google-chat-electron&page=1&per_page=30)
 [![homebrew](https://badgen.net/homebrew/cask/dy/google-chat-electron)](https://formulae.brew.sh/cask/google-chat-electron)
+[![chocolatey](https://img.shields.io/chocolatey/dt/unofficial-Google-Chat-Electron?color=blue&label=chocolatey)](https://community.chocolatey.org/packages/unofficial-Google-Chat-Electron)
 [![release-linux](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-linux.yml/badge.svg)](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-linux.yml)
 [![release-mac](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-mac.yml/badge.svg)](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-mac.yml)
 [![release-windows](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-windows.yml/badge.svg)](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-windows.yml)
@@ -17,7 +18,7 @@ with [Electron](https://www.electronjs.org/apps/google-chat-electron)
 * Google has [shutdown](https://support.google.com/chat/answer/10194711) the official Google Chat Desktop App in March
   2021
 * Google is forcing users to use PWA which has less features
-* You are a Firefox user and don't want to install Chrome; just to use a PWA. :wink:
+* You don't want to install Chrome; just to use a PWA. :wink:
 
 ### Installation (Debian Linux)
 
@@ -68,6 +69,10 @@ sudo xattr -rd com.apple.quarantine ~/Applications/google-chat-electron.app
   on [Windows App Store](https://apps.microsoft.com/store/detail/gchat-for-desktop/9MZXBPL66066)
 * You can install this app by [downloading](https://github.com/ankurk91/google-chat-electron/releases/latest) the
   installer
+* If you prefer [chocolatey](https://chocolatey.org/) on Windows, you can run:
+```powershell
+choco install unofficial-google-chat-electron
+```
 * If you prefer [winget-cli](https://github.com/microsoft/winget-cli) on Windows 10+, you can run:
 
 ```bash
@@ -80,8 +85,8 @@ The app should work on all x64 and Apple arm64 platforms, but due to lack of tim
 
 | OS/Platform         |    Version    |
 |:--------------------|:-------------:|
-| Ubuntu GNOME        |     20.x      |
-| Linux Mint Cinnamon |     20.x      |
+| Ubuntu GNOME        |    20, 22     |
+| Linux Mint Cinnamon |    20, 21     |
 | MacOS               | 10.15, 11, 12 |
 | Windows             |   7, 10, 11   |
 
