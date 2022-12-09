@@ -8,8 +8,15 @@
 [![release-mac](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-mac.yml/badge.svg)](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-mac.yml)
 [![release-windows](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-windows.yml/badge.svg)](https://github.com/ankurk91/google-chat-electron/actions/workflows/release-windows.yml)
 
-An unofficial desktop app for [Google Chat](http://chat.google.com) built
-with [Electron](https://www.electronjs.org/apps/google-chat-electron)
+An unofficial desktop app for [Google Chat](http://chat.google.com) built with [Electron](https://www.electronjs.org)
+
+## Announcement
+
+This app is no longer maintained. Reasons:
+
+* My employer has moved to Slack
+* It takes lots of time to build and test on all the platforms.
+* Google is blocking 3rd party apps to log-in, see [#52](https://github.com/ankurk91/google-chat-electron/issues/52)
 
 :mega: Since version 2.17, we have removed support for snap package on Linux
 
@@ -33,7 +40,7 @@ sudo apt install ~/path/to/google-chat-electron-xxx-amd64.deb
 ### Uninstall (Debian based Linux)
 
 * Logout and Quit from app
-* Remove the app with this command 
+* Remove the app with this command
 
 ```bash
 sudo apt-get remove --purge google-chat-electron
@@ -43,7 +50,11 @@ sudo apt-get remove --purge google-chat-electron
 
 ### Installation (Mac)
 
-* Homebrew users can run `brew install --cask --no-quarantine google-chat-electron`
+* Homebrew users can run
+
+```bash
+brew install --cask --no-quarantine google-chat-electron
+```
 
 or
 
@@ -70,21 +81,24 @@ sudo xattr -rd com.apple.quarantine ~/Applications/google-chat-electron.app
 * You can install this app by [downloading](https://github.com/ankurk91/google-chat-electron/releases/latest) the
   installer
 * If you prefer [chocolatey](https://chocolatey.org/) on Windows, you can run:
+
 ```powershell
 choco install unofficial-google-chat-electron
 ```
+
 * If you prefer [winget-cli](https://github.com/microsoft/winget-cli) on Windows 10+, you can run:
 
 ```bash
 winget install --id=ankurk91.GoogleChatElectron  -e
 ```
 
-### Installation (Redhat based Linux)
+### Installation (Fedora/RHEL/CentOS)
 
-We don't provide installers for Redhat linux, but you can create installer by your own.
+We don't provide installers for Fedora/RHEL/CentOS, but you can build a local RPM package by your own.
 
 ```bash
-sudo dnf install rpm-build
+sudo dnf install rpm-build npm
+curl -fsSL https://get.pnpm.io/install.sh | sh -
 git clone https://github.com/ankurk91/google-chat-electron.git
 cd google-chat-electron
 
@@ -93,7 +107,7 @@ npm run pack:linux
 npx electron-installer-redhat@^3 --src dist/google-chat-electron-linux-x64 --dest dist/installers/ --arch x86_64
 ```
 
-This will create an RPM package in `./dist/installers` folder.
+This will create an RPM package in `./dist/installers` folder (you can specify any location you wish).
 You can install it with `dnf` or `rpm-ostree` depending on your distro.
 
 ### Supported Platforms
@@ -103,7 +117,7 @@ The app should work on all x64 and Apple arm64 platforms, but due to lack of tim
 | OS/Platform         |    Version    |
 |:--------------------|:-------------:|
 | Ubuntu GNOME        |    20, 22     |
-| Linux Mint Cinnamon |    20, 21     |
+| Linux Mint Cinnamon |      21       |
 | MacOS               | 10.15, 11, 12 |
 | Windows             |   7, 10, 11   |
 
